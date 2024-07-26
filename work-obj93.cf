@@ -1,0 +1,19 @@
+v 4
+file . "decoder2x4_tb.vhd" "6536354f31e6a4839cc525a16933e6cdc4173898" "20240419205419.980":
+  entity decoder2x4_tb at 1( 0) + 0 on 21;
+  architecture a_decoder2x4_tb of decoder2x4_tb at 7( 87) + 0 on 22;
+file . "porta_tb.vhd" "dfa99cd4677f73f828f8065ec0c641c33e51ad08" "20240419201022.530":
+  entity porta_tb at 1( 0) + 0 on 17;
+  architecture a_porta_tb of porta_tb at 7( 82) + 0 on 18;
+file . "ha_tb.vhd" "275e5cf80471ed9ca313296c8b7469be84d3e527" "20240419044704.134":
+  entity ha_tb at 1( 0) + 0 on 13;
+  architecture test of ha_tb at 7( 78) + 0 on 14;
+file . "ha.vhd" "c5be22f422986a43f79462d7eca352ec773cd2c3" "20240419044656.026":
+  entity ha at 1( 0) + 0 on 11;
+  architecture behave of ha at 14( 169) + 0 on 12;
+file . "porta.vhd" "e6cb5f0b0db227c49926a1347e8f6c34b5b9ecb8" "20240419195632.444":
+  entity porta at 1( 0) + 0 on 15;
+  architecture a_porta of porta at 11( 165) + 0 on 16;
+file . "decoder2x4.vhd" "9ec000ccc69d43343dffda28fe8749c288f90647" "20240419205347.655":
+  entity decoder2x4 at 1( 0) + 0 on 19;
+  architecture a_decoder2x4 of decoder2x4 at 10( 156) + 0 on 20;
