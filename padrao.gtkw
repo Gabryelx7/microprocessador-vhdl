@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Apr 24 01:33:14 2024
+[*]
+[dumpfile] "D:\Downloads\Arquitetura de Computadores\VHDL\2.ULA\ula_tb.ghw"
+[dumpfile_mtime] "Wed Apr 24 01:31:25 2024"
+[dumpfile_size] 1165
+[savefile] "D:\Downloads\Arquitetura de Computadores\VHDL\2.ULA\padrao.gtkw"
+[timestart] 0
+[size] 1536 801
+[pos] -87 -87
+*0.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.ula_tb.
+[sst_width] 197
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 224
+@420
+#{top.ula_tb.in_a[15:0]} top.ula_tb.in_a[15] top.ula_tb.in_a[14] top.ula_tb.in_a[13] top.ula_tb.in_a[12] top.ula_tb.in_a[11] top.ula_tb.in_a[10] top.ula_tb.in_a[9] top.ula_tb.in_a[8] top.ula_tb.in_a[7] top.ula_tb.in_a[6] top.ula_tb.in_a[5] top.ula_tb.in_a[4] top.ula_tb.in_a[3] top.ula_tb.in_a[2] top.ula_tb.in_a[1] top.ula_tb.in_a[0]
+#{top.ula_tb.in_b[15:0]} top.ula_tb.in_b[15] top.ula_tb.in_b[14] top.ula_tb.in_b[13] top.ula_tb.in_b[12] top.ula_tb.in_b[11] top.ula_tb.in_b[10] top.ula_tb.in_b[9] top.ula_tb.in_b[8] top.ula_tb.in_b[7] top.ula_tb.in_b[6] top.ula_tb.in_b[5] top.ula_tb.in_b[4] top.ula_tb.in_b[3] top.ula_tb.in_b[2] top.ula_tb.in_b[1] top.ula_tb.in_b[0]
+@28
+#{top.ula_tb.sel[1:0]} top.ula_tb.sel[1] top.ula_tb.sel[0]
+@421
+#{top.ula_tb.result[15:0]} top.ula_tb.result[15] top.ula_tb.result[14] top.ula_tb.result[13] top.ula_tb.result[12] top.ula_tb.result[11] top.ula_tb.result[10] top.ula_tb.result[9] top.ula_tb.result[8] top.ula_tb.result[7] top.ula_tb.result[6] top.ula_tb.result[5] top.ula_tb.result[4] top.ula_tb.result[3] top.ula_tb.result[2] top.ula_tb.result[1] top.ula_tb.result[0]
+@28
+top.ula_tb.zero
+top.ula_tb.a_maior
+[pattern_trace] 1
+[pattern_trace] 0

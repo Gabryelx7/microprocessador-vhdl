@@ -1,19 +1,19 @@
 v 4
-file . "decoder2x4_tb.vhd" "6536354f31e6a4839cc525a16933e6cdc4173898" "20240419205419.980":
-  entity decoder2x4_tb at 1( 0) + 0 on 21;
-  architecture a_decoder2x4_tb of decoder2x4_tb at 7( 87) + 0 on 22;
-file . "porta_tb.vhd" "dfa99cd4677f73f828f8065ec0c641c33e51ad08" "20240419201022.530":
-  entity porta_tb at 1( 0) + 0 on 17;
-  architecture a_porta_tb of porta_tb at 7( 82) + 0 on 18;
-file . "ha_tb.vhd" "275e5cf80471ed9ca313296c8b7469be84d3e527" "20240419044704.134":
-  entity ha_tb at 1( 0) + 0 on 13;
-  architecture test of ha_tb at 7( 78) + 0 on 14;
-file . "ha.vhd" "c5be22f422986a43f79462d7eca352ec773cd2c3" "20240419044656.026":
-  entity ha at 1( 0) + 0 on 11;
-  architecture behave of ha at 14( 169) + 0 on 12;
-file . "porta.vhd" "e6cb5f0b0db227c49926a1347e8f6c34b5b9ecb8" "20240419195632.444":
-  entity porta at 1( 0) + 0 on 15;
-  architecture a_porta of porta at 11( 165) + 0 on 16;
-file . "decoder2x4.vhd" "9ec000ccc69d43343dffda28fe8749c288f90647" "20240419205347.655":
-  entity decoder2x4 at 1( 0) + 0 on 19;
-  architecture a_decoder2x4 of decoder2x4 at 10( 156) + 0 on 20;
+file . "ula.vhd" "6a022268ad0905e3dd038f2f48304a90d9cdb3e2" "20240424025345.954":
+  entity ula at 1( 0) + 0 on 57;
+  architecture a_ula of ula at 15( 311) + 0 on 58;
+file . "soma_e_subtrai.vhd" "08eaabdba614656b433d7ab07cc16a3a28523396" "20240420185021.588":
+  entity soma_e_subtrai at 1( 0) + 0 on 15;
+  architecture a_soma_e_subtrai of soma_e_subtrai at 12( 242) + 0 on 16;
+file . "mux8x1.vhd" "47e9e2b227124277731db68029378b18ea602f55" "20240420175547.938":
+  entity mux8x1 at 1( 0) + 0 on 11;
+  architecture a_mux8x1 of mux8x1 at 12( 188) + 0 on 12;
+file . "mux8x1_tb.vhd" "95b4ecc329f7937b604d9c059c274ff309c45d65" "20240420180510.922":
+  entity mux8x1_tb at 1( 0) + 0 on 13;
+  architecture a_mux8x1_tb of mux8x1_tb at 7( 83) + 0 on 14;
+file . "soma_e_subtrai_tb.vhd" "ea137c3f31638ba30c18eaca0350d54d70f4dec4" "20240420190314.707":
+  entity soma_e_subtrai_tb at 1( 0) + 0 on 17;
+  architecture a_soma_e_subtrai_tb of soma_e_subtrai_tb at 8( 118) + 0 on 18;
+file . "ula_tb.vhd" "10237bca3ff6cfbe9ead74566f038e7fbd389216" "20240424025351.797":
+  entity ula_tb at 1( 0) + 0 on 59;
+  architecture a_ula_tb of ula_tb at 8( 107) + 0 on 60;
