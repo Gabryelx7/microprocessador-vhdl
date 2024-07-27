@@ -1,19 +1,16 @@
 v 4
-file . "ula.vhd" "6a022268ad0905e3dd038f2f48304a90d9cdb3e2" "20240424025345.954":
-  entity ula at 1( 0) + 0 on 57;
-  architecture a_ula of ula at 15( 311) + 0 on 58;
-file . "soma_e_subtrai.vhd" "08eaabdba614656b433d7ab07cc16a3a28523396" "20240420185021.588":
-  entity soma_e_subtrai at 1( 0) + 0 on 15;
-  architecture a_soma_e_subtrai of soma_e_subtrai at 12( 242) + 0 on 16;
-file . "mux8x1.vhd" "47e9e2b227124277731db68029378b18ea602f55" "20240420175547.938":
-  entity mux8x1 at 1( 0) + 0 on 11;
-  architecture a_mux8x1 of mux8x1 at 12( 188) + 0 on 12;
-file . "mux8x1_tb.vhd" "95b4ecc329f7937b604d9c059c274ff309c45d65" "20240420180510.922":
-  entity mux8x1_tb at 1( 0) + 0 on 13;
-  architecture a_mux8x1_tb of mux8x1_tb at 7( 83) + 0 on 14;
-file . "soma_e_subtrai_tb.vhd" "ea137c3f31638ba30c18eaca0350d54d70f4dec4" "20240420190314.707":
-  entity soma_e_subtrai_tb at 1( 0) + 0 on 17;
-  architecture a_soma_e_subtrai_tb of soma_e_subtrai_tb at 8( 118) + 0 on 18;
-file . "ula_tb.vhd" "10237bca3ff6cfbe9ead74566f038e7fbd389216" "20240424025351.797":
-  entity ula_tb at 1( 0) + 0 on 59;
-  architecture a_ula_tb of ula_tb at 8( 107) + 0 on 60;
+file . "bancoRegs.vhd" "ba3f8a35b8f346c4af207c8f93ddee2ec176cfac" "20240505221915.348":
+  entity bancoregs at 1( 0) + 0 on 41;
+  architecture a_bancoregs of bancoregs at 16( 411) + 0 on 42;
+file . "reg16bits_tb.vhd" "85f81b571d3d742cabd2e6400460382ae755b664" "20240504002817.054":
+  entity reg16bits_tb at 1( 0) + 0 on 19;
+  architecture a_reg16bits_tb of reg16bits_tb at 8( 113) + 0 on 20;
+file . "reg16bits.vhd" "04fb8d702444dfeae71d3fd24647d47b997cde6d" "20240503224050.067":
+  entity reg16bits at 1( 0) + 0 on 11;
+  architecture a_reg16bits of reg16bits at 14( 276) + 0 on 12;
+file . "bancoRegs_tb.vhd" "869195796c728cd70b1861ca80068f31fe5e6909" "20240504194625.599":
+  entity bancoregs_tb at 1( 0) + 0 on 35;
+  architecture a_bancoregs_tb of bancoregs_tb at 8( 113) + 0 on 36;
+file . "processor.vhd" "1d54154a8dc61eac869f2627eb23fbea3fd80345" "20240505233244.449":
+  entity processor at 1( 0) + 0 on 45;
+  architecture a_processor of processor at 14( 330) + 0 on 46;

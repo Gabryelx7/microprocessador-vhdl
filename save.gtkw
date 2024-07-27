@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri May 03 23:11:27 2024
+[*]
+[dumpfile] "D:\Downloads\Arquitetura de Computadores\VHDL\3.Banco de Regs\reg16bits.ghw"
+[dumpfile_mtime] "Fri May 03 23:03:47 2024"
+[dumpfile_size] 1120
+[savefile] "D:\Downloads\Arquitetura de Computadores\VHDL\3.Banco de Regs\save.gtkw"
+[timestart] 857700000
+[size] 1536 801
+[pos] -191 -191
+*-27.000000 1572400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.reg16bits_tb.
+[sst_width] 197
+[signals_width] 185
+[sst_expanded] 1
+[sst_vpaned_height] 224
+@28
+top.reg16bits_tb.wr_en
+top.reg16bits_tb.rst
+top.reg16bits_tb.clk
+top.reg16bits_tb.finished
+#{top.reg16bits_tb.data_in[15:0]} top.reg16bits_tb.data_in[15] top.reg16bits_tb.data_in[14] top.reg16bits_tb.data_in[13] top.reg16bits_tb.data_in[12] top.reg16bits_tb.data_in[11] top.reg16bits_tb.data_in[10] top.reg16bits_tb.data_in[9] top.reg16bits_tb.data_in[8] top.reg16bits_tb.data_in[7] top.reg16bits_tb.data_in[6] top.reg16bits_tb.data_in[5] top.reg16bits_tb.data_in[4] top.reg16bits_tb.data_in[3] top.reg16bits_tb.data_in[2] top.reg16bits_tb.data_in[1] top.reg16bits_tb.data_in[0]
+@29
+#{top.reg16bits_tb.data_out[15:0]} top.reg16bits_tb.data_out[15] top.reg16bits_tb.data_out[14] top.reg16bits_tb.data_out[13] top.reg16bits_tb.data_out[12] top.reg16bits_tb.data_out[11] top.reg16bits_tb.data_out[10] top.reg16bits_tb.data_out[9] top.reg16bits_tb.data_out[8] top.reg16bits_tb.data_out[7] top.reg16bits_tb.data_out[6] top.reg16bits_tb.data_out[5] top.reg16bits_tb.data_out[4] top.reg16bits_tb.data_out[3] top.reg16bits_tb.data_out[2] top.reg16bits_tb.data_out[1] top.reg16bits_tb.data_out[0]
+[pattern_trace] 1
+[pattern_trace] 0
