@@ -1,0 +1,34 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity control is
+	port(	rst : in std_logic;
+			clk : in std_logic;
+			adr_in : in unsigned(6 downto 0);
+			adr_out: out unsigned(6 downto 0);
+			pcWrite_en: out std_logic
+		);
+end entity;
+
+architecture a_control of control is
+
+	component stateMachine is
+	port(	clk		: in std_logic;
+			rst		: in std_logic;
+			--data_i 	: in std_logic;
+			data_o	: out std_logic
+		);
+	end component;
+	
+	signal state : std_logic;
+	
+	begin
+	
+	stMachine : stateMachine port map(clk => clk, rst => rst, data_o => state);
+	
+	pcWrite_en <= 	'1' when state = '1' else
+					'0';
+	
+	adr_out <= adr_in + 1;
+end architecture;

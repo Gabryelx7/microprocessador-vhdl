@@ -24,18 +24,18 @@ architecture a_bancoRegs of bancoRegs is
 	end component;
 	
 	signal s0_out, s1_out, s2_out, s3_out, s4_out, s5_out, s6_out, zero_out : unsigned (15 downto 0);
-	signal s0_in, s1_in, s2_in, s3_in, s4_in, s5_in, s6_in : unsigned (15 downto 0);
+	signal reg_in : unsigned (15 downto 0);
 	signal enable : unsigned(7 downto 0) := "00000000";
 	
 	begin
 	zero: reg16bits port map(rst => rst, clk => clk, wr_en => enable(0), data_in => x"0000", data_out => zero_out);
-	s0: reg16bits port map(rst => rst, clk => clk, wr_en => enable(1), data_in => s0_in, data_out => s0_out);
-	s1: reg16bits port map(rst => rst, clk => clk, wr_en => enable(2), data_in => s1_in, data_out => s1_out);
-	s2: reg16bits port map(rst => rst, clk => clk, wr_en => enable(3), data_in => s2_in, data_out => s2_out);
-	s3: reg16bits port map(rst => rst, clk => clk, wr_en => enable(4), data_in => s3_in, data_out => s3_out);
-	s4: reg16bits port map(rst => rst, clk => clk, wr_en => enable(5), data_in => s4_in, data_out => s4_out);
-	s5: reg16bits port map(rst => rst, clk => clk, wr_en => enable(6), data_in => s5_in, data_out => s5_out);
-	s6: reg16bits port map(rst => rst, clk => clk, wr_en => enable(7), data_in => s6_in, data_out => s6_out);
+	s0: reg16bits port map(rst => rst, clk => clk, wr_en => enable(1), data_in => reg_in, data_out => s0_out);
+	s1: reg16bits port map(rst => rst, clk => clk, wr_en => enable(2), data_in => reg_in, data_out => s1_out);
+	s2: reg16bits port map(rst => rst, clk => clk, wr_en => enable(3), data_in => reg_in, data_out => s2_out);
+	s3: reg16bits port map(rst => rst, clk => clk, wr_en => enable(4), data_in => reg_in, data_out => s3_out);
+	s4: reg16bits port map(rst => rst, clk => clk, wr_en => enable(5), data_in => reg_in, data_out => s4_out);
+	s5: reg16bits port map(rst => rst, clk => clk, wr_en => enable(6), data_in => reg_in, data_out => s5_out);
+	s6: reg16bits port map(rst => rst, clk => clk, wr_en => enable(7), data_in => reg_in, data_out => s6_out);
 	
 	rd_data_a <= 	zero_out when read_a = "000" else
 					s0_out when read_a = "001" else
@@ -57,34 +57,15 @@ architecture a_bancoRegs of bancoRegs is
 					s6_out when read_b = "111" else
 					x"0000";
 	
-	write_proc : process(wr_en, write_r, write_data)
-	begin
-		if wr_en = '1' then
-			if write_r = "001" then
-				enable(1) <= '1';
-				s0_in <= write_data;
-			elsif write_r = "010" then
-				enable(2) <= '1';
-				s1_in <= write_data;
-			elsif write_r = "011" then
-				enable(3) <= '1';
-				s2_in <= write_data;
-			elsif write_r = "100" then
-				enable(4) <= '1';
-				s3_in <= write_data;
-			elsif write_r = "101" then
-				enable(5) <= '1';
-				s4_in <= write_data;
-			elsif write_r = "110" then
-				enable(6) <= '1';
-				s5_in <= write_data;
-			elsif write_r = "111" then
-				enable(7) <= '1';
-				s6_in <= write_data;
-			end if;
-		else
-			enable <= "00000000";
-		end if;
-	end process;
+	reg_in <= write_data;
+	
+	enable <= 	"00000010" when write_r = "001" and wr_en = '1' else
+				"00000100" when write_r = "010" and wr_en = '1' else
+				"00001000" when write_r = "011" and wr_en = '1' else
+				"00010000" when write_r = "100" and wr_en = '1' else
+				"00100000" when write_r = "101" and wr_en = '1' else
+				"01000000" when write_r = "110" and wr_en = '1' else
+				"10000000" when write_r = "111" and wr_en = '1' else
+				"00000000";
 
 end architecture;

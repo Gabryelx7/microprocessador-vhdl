@@ -44,7 +44,7 @@ component programCounter is
 	port(	clk		: in std_logic;
 			wr_en	: in std_logic;
 			reset 	: in std_logic;
-			data_in : in unsigned(6 downto 0);
+			data_in : in unsigned(6 downto 0) := "0000000";
 			data_out: out unsigned(6 downto 0)
 		);
 end component;
@@ -55,8 +55,8 @@ component control is
 			adr_in : in unsigned(6 downto 0);
 			instr: in unsigned(11 downto 0);
 			adr_out: out unsigned(6 downto 0);
-			pcWrite_en: out std_logic
-			--jump_en: out std_logic
+			pcWrite_en: out std_logic;
+			jump_en: out std_logic
 		);
 end component;
 
@@ -68,7 +68,7 @@ end component;
 	signal endereco 	: unsigned(6 downto 0);
 	signal dado 		: unsigned(11 downto 0);
 	
-	signal wr_en_end		: std_logic;
+	signal wr_en_end		: std_logic := '1';
 	signal rst_end			: std_logic;
 	signal pc_in, pc_out, adr_in, adr_out 	: unsigned(6 downto 0);	
 	
@@ -88,7 +88,7 @@ begin
 	
 	pc : programCounter port map (clk => clk, wr_en => wr_en_end, reset => rst_end, data_in => pc_in, data_out => pc_out);
 	
-	controlUnit : control port map( rst => rst, clk => clk, adr_in => adr_in, adr_out => adr_out, instr => dado, pcWrite_en => wr_en_end);
+	controlUnity : control port map( rst => rst, clk => clk, adr_in => adr_in, adr_out => adr_out, instr => dado, pcWrite_en => wr_en_end);
 	
 	rst_end <= rst;
 	pc_in <= adr_out;
