@@ -1,0 +1,36 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri May 17 23:41:57 2024
+[*]
+[dumpfile] "D:\Downloads\Arquitetura de Computadores\VHDL\5.Calc prog\control.ghw"
+[dumpfile_mtime] "Fri May 17 23:39:49 2024"
+[dumpfile_size] 1833
+[savefile] "D:\Downloads\Arquitetura de Computadores\VHDL\5.Calc prog\control.gtkw"
+[timestart] 0
+[size] 1536 801
+[pos] -165 -165
+*-27.218029 222400000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.control_tb.
+[sst_width] 197
+[signals_width] 195
+[sst_expanded] 1
+[sst_vpaned_height] 224
+@28
+top.control_tb.rst
+top.control_tb.clk
+#{top.control_tb.state[1:0]} top.control_tb.state[1] top.control_tb.state[0]
+@29
+#{top.control_tb.instr_op[3:0]} top.control_tb.instr_op[3] top.control_tb.instr_op[2] top.control_tb.instr_op[1] top.control_tb.instr_op[0]
+@28
+top.control_tb.reg_d
+top.control_tb.instwrite_en
+top.control_tb.regwrite_en
+top.control_tb.pcwrite_en
+top.control_tb.acc_en
+top.control_tb.br_src
+top.control_tb.jump_en
+top.control_tb.alusrca
+#{top.control_tb.aluop[1:0]} top.control_tb.aluop[1] top.control_tb.aluop[0]
+[pattern_trace] 1
+[pattern_trace] 0

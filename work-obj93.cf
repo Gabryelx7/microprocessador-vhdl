@@ -1,52 +1,52 @@
 v 4
-file . "ctrlTL.vhd" "a9adede1259df69d0f4ab9d52cef25e88a5cc634" "20240513194924.273":
-  entity ctrltl at 1( 0) + 0 on 177;
-  architecture a_ctrltl of ctrltl at 11( 194) + 0 on 178;
-file . "pcControl_tb.vhd" "5eb5471a8fa534b7f747485457e1f8c014ab383c" "20240513024044.756":
-  entity pccontrol_tb at 1( 0) + 0 on 147;
-  architecture a_pccontrol_tb of pccontrol_tb at 8( 113) + 0 on 148;
-file . "programCounter_tb.vhd" "3c66a79753c914f05e66832adafd67360a025337" "20240512232228.128":
-  entity programcounter_tb at 1( 0) + 0 on 109;
-  architecture a_programcounter_tb of programcounter_tb at 8( 118) + 0 on 110;
-file . "rom.vhd" "9298aaaf700be6fddbf1b50f72fc90a205fcd49c" "20240513192535.566":
-  entity rom at 1( 0) + 0 on 161;
-  architecture a_rom of rom at 12( 238) + 0 on 162;
-file . "programCounter.vhd" "83170c31226fac016e52daeb2c56bf3c98bd1351" "20240513192633.190":
-  entity programcounter at 1( 0) + 0 on 163;
-  architecture a_programcounter of programcounter at 14( 280) + 0 on 164;
-file . "adressAdder.vhd" "b7034b612c08a5fb879501612d2ed0cab46145c0" "20240511001438.137":
-  entity adressadder at 1( 0) + 0 on 45;
-  architecture a_adressadder of adressadder at 11( 198) + 0 on 46;
-file . "reg16bits.vhd" "04fb8d702444dfeae71d3fd24647d47b997cde6d" "20240505235835.539":
-  entity reg16bits at 1( 0) + 0 on 17;
-  architecture a_reg16bits of reg16bits at 14( 276) + 0 on 18;
-file . "processor_tb.vhd" "b839d7cde2ff2c237e6fb13736aff41ddfe8a136" "20240513194109.406":
-  entity processor_tb at 1( 0) + 0 on 175;
-  architecture a_processor_tb of processor_tb at 8( 113) + 0 on 176;
-file . "processor.vhd" "4dea7ee52fe76994aaa411f5cf06b0d7d3a22c17" "20240513193959.377":
-  entity processor at 1( 0) + 0 on 173;
-  architecture a_processor of processor at 16( 415) + 0 on 174;
-file . "bancoRegs.vhd" "b2c37ba6ad16f1e2c27d23cb4c16e887681b68a9" "20240510214548.902":
-  entity bancoregs at 1( 0) + 0 on 37;
-  architecture a_bancoregs of bancoregs at 16( 411) + 0 on 38;
-file . "ula.vhd" "19c808164338a7318e520371238b90257ef2aa2d" "20240505235930.226":
-  entity ula at 1( 0) + 0 on 23;
-  architecture a_ula of ula at 14( 270) + 0 on 24;
-file . "bancoRegs_tb.vhd" "869195796c728cd70b1861ca80068f31fe5e6909" "20240510214601.881":
-  entity bancoregs_tb at 1( 0) + 0 on 39;
-  architecture a_bancoregs_tb of bancoregs_tb at 8( 113) + 0 on 40;
-file . "stateMachine.vhd" "3dc6eb52b80b25bfe345798f2f814446993253f7" "20240513192648.498":
-  entity statemachine at 1( 0) + 0 on 167;
-  architecture a_statemachine of statemachine at 12( 200) + 0 on 168;
-file . "rom_tb.vhd" "5d8bb7ecab13546a644d28485f42eb7ece8cae5d" "20240511014113.612":
-  entity rom_tb at 1( 0) + 0 on 63;
-  architecture a_rom_tb of rom_tb at 8( 107) + 0 on 64;
-file . "control.vhd" "643327321456cb0de44af1af1b73bf4b8198ad65" "20240513194939.084":
-  entity control at 1( 0) + 0 on 179;
-  architecture a_control of control at 15( 310) + 0 on 180;
-file . "control_tb.vhd" "f9fe9c06690618f49f5b7fd443cf30362339e7c1" "20240513193615.251":
-  entity control_tb at 1( 0) + 0 on 171;
-  architecture a_control_tb of control_tb at 8( 111) + 0 on 172;
-file . "ctrlTL_tb.vhd" "2839a345a5ee26c83daacf692eab4389b0853ba9" "20240513195406.163":
-  entity ctrltl_tb at 1( 0) + 0 on 185;
-  architecture a_ctrltl_tb of ctrltl_tb at 8( 110) + 0 on 186;
+file . "control_tb.vhd" "d8dc1815aa9ae8afd923105311e853bb33b1dd0e" "20240517234225.440":
+  entity control_tb at 1( 0) + 0 on 155;
+  architecture a_control_tb of control_tb at 8( 111) + 0 on 156;
+file . "sign_ext_tb.vhd" "40c4ef70fa5e8a13abc8e62b2f8da999aebba88a" "20240517222813.702":
+  entity sign_ext_tb at 1( 0) + 0 on 147;
+  architecture a_sign_ext_tb of sign_ext_tb at 8( 112) + 0 on 148;
+file . "programCounter_tb.vhd" "3c66a79753c914f05e66832adafd67360a025337" "20240517222306.485":
+  entity programcounter_tb at 1( 0) + 0 on 143;
+  architecture a_programcounter_tb of programcounter_tb at 8( 118) + 0 on 144;
+file . "bancoRegs_tb.vhd" "68c2949e9e417ccc88a18eb9c8ae54eaeb8b45a0" "20240517221511.464":
+  entity bancoregs_tb at 1( 0) + 0 on 141;
+  architecture a_bancoregs_tb of bancoregs_tb at 8( 113) + 0 on 142;
+file . "ula.vhd" "ff92c6825609a26bf6ce55aee84ccb098c97bf0c" "20240517214924.082":
+  entity ula at 1( 0) + 0 on 131;
+  architecture a_ula of ula at 14( 270) + 0 on 132;
+file . "stateMachine.vhd" "f802952d586d421693fa2885c82b16098748f0a6" "20240517214924.079":
+  entity statemachine at 1( 0) + 0 on 129;
+  architecture a_statemachine of statemachine at 9( 196) + 1 on 130;
+file . "sign_ext.vhd" "530bef75d96f519f8a08300241174ed1f16d67a7" "20240517214924.075":
+  entity sign_ext at 1( 0) + 0 on 127;
+  architecture a_sign_ext of sign_ext at 11( 196) + 0 on 128;
+file . "rom.vhd" "902de82899e06b320ea9d42a3c246ea67bab5acf" "20240517215447.692":
+  entity rom at 1( 0) + 0 on 133;
+  architecture a_rom of rom at 12( 238) + 0 on 134;
+file . "reg16bits.vhd" "04fb8d702444dfeae71d3fd24647d47b997cde6d" "20240517214924.067":
+  entity reg16bits at 1( 0) + 0 on 123;
+  architecture a_reg16bits of reg16bits at 14( 276) + 0 on 124;
+file . "programCounter.vhd" "83170c31226fac016e52daeb2c56bf3c98bd1351" "20240517182820.522":
+  entity programcounter at 1( 0) + 0 on 89;
+  architecture a_programcounter of programcounter at 14( 280) + 0 on 90;
+file . "instr_reg.vhd" "2cbd564877aaa58c6184dffc041ac8855211dac7" "20240517235325.118":
+  entity instr_reg at 1( 0) + 0 on 161;
+  architecture a_instr_teg of instr_reg at 14( 296) + 0 on 162;
+file . "processor.vhd" "c64d3681611da74c749b4b27791c08066386aa4c" "20240517235247.664":
+  entity processor at 1( 0) + 0 on 159;
+  architecture a_processor of processor at 16( 376) + 0 on 160;
+file . "acumulador.vhd" "003f989d2a439374882e8708d203b9325db25d77" "20240517214924.037":
+  entity acumulador at 1( 0) + 0 on 111;
+  architecture a_acumulador of acumulador at 14( 277) + 0 on 112;
+file . "bancoRegs.vhd" "57854d592324cdf834a91af441aa5a42e4f7c856" "20240517221356.274":
+  entity bancoregs at 1( 0) + 0 on 137;
+  architecture a_bancoregs of bancoregs at 14( 325) + 0 on 138;
+file . "control.vhd" "0be46e95627162ec63a831ad743bf85f12f2c658" "20240517235247.662":
+  entity control at 1( 0) + 0 on 157;
+  architecture a_control of control at 20( 481) + 0 on 158;
+file . "processor_tb.vhd" "7af5e03896db4526b182190341a6e3fe49e5be41" "20240517214924.064":
+  entity processor_tb at 1( 0) + 0 on 121;
+  architecture a_processor_tb of processor_tb at 8( 113) + 0 on 122;
+file . "rom_tb.vhd" "397411db1009271c6f99f25d366fb471916e9304" "20240517222429.604":
+  entity rom_tb at 1( 0) + 0 on 145;
+  architecture a_rom_tb of rom_tb at 8( 107) + 0 on 146;

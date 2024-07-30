@@ -3,11 +3,15 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity control is
-	port(	rst : in std_logic;
-			clk : in std_logic;
-			adr_in : in unsigned(6 downto 0);
-			adr_out: out unsigned(6 downto 0);
-			pcWrite_en: out std_logic
+	port(	rst 	: in std_logic;
+			clk 	: in std_logic;
+			instr_op: in unsigned(3 downto 0);
+			aluOp	: out unsigned(1 downto 0);
+			aluSrcA : out std_logic;
+			jump_en : out std_logic;
+			load_en : out std_logic;
+			acc_en	: out std_logic;
+			pcWrite_en, regWrite_en, instWrite_en: out std_logic
 		);
 end entity;
 
@@ -16,19 +20,54 @@ architecture a_control of control is
 	component stateMachine is
 	port(	clk		: in std_logic;
 			rst		: in std_logic;
-			--data_i 	: in std_logic;
-			data_o	: out std_logic
+			estado  : out unsigned(1 downto 0)
 		);
 	end component;
 	
-	signal state : std_logic;
+	signal state : unsigned(1 downto 0);
+	signal opcode: unsigned(3 downto 0);
+	
+	--opcodes das instruções
+	constant jump_op : unsigned(3 downto 0) := "1111";
+	constant add_op : unsigned(3 downto 0) := "0001";  
+	constant addi_op : unsigned(3 downto 0) := "0010";  
+	constant sub_op : unsigned(3 downto 0) := "0011";  
+	constant subi_op : unsigned(3 downto 0) := "0100";
+	constant ld_op : unsigned(3 downto 0) := "0110";	
 	
 	begin
 	
-	stMachine : stateMachine port map(clk => clk, rst => rst, data_o => state);
+	stMachine : stateMachine port map(clk => clk, rst => rst, estado => state);
 	
-	pcWrite_en <= 	'1' when state = '1' else
+	opcode <= instr_op;
+	
+	acc_en <= 	'1' when state = "01" and opcode = ld_op else
+				'1' when state = "10" and opcode = 
+			
+	
+	jump_en <= 	'1' when opcode = jump_op else
+				'0';
+	
+	load_en <= 	'1' when opcode = ld_op else
+				'0';
+	
+	instWrite_en <= '1' when state = "00" else
+					'0';
+					
+	pcWrite_en <= 	'1' when state = "01" else
 					'0';
 	
-	adr_out <= adr_in + 1;
+	regWrite_en <= 	'1' when state = "10" and opcode /= jump_op else
+					'0';
+	
+	aluOp <=	"00" when state = "01" and opcode = add_op else
+				"00" when state = "01" and opcode = addi_op else
+				"01" when state = "01" and opcode = sub_op else
+				"01" when state = "01" and opcode = subi_op else
+				"00";
+	
+	aluSrcA <= 	'1' when state = "01" and opcode = addi_op else
+				'1' when state = "01" and opcode = subi_op else
+				'0';
+	
 end architecture;
