@@ -13,7 +13,8 @@ entity control is
 			jump_en : out std_logic;
 			br_src : out std_logic;
 			acc_en	: out std_logic;
-			pcWrite_en, regWrite_en, instWrite_en: out std_logic
+			pcWrite_en, regWrite_en, instWrite_en: out std_logic;
+			jz_en, jn_en, jp_en, flag_en : out std_logic
 		);
 end entity;
 
@@ -30,19 +31,40 @@ architecture a_control of control is
 	signal opcode: unsigned(3 downto 0);
 	
 	--opcodes das instruções
-	constant jump_op : unsigned(3 downto 0) := "1111";
-	constant add_op : unsigned(3 downto 0) := "0001";  
-	constant addi_op : unsigned(3 downto 0) := "0010";  
-	constant sub_op : unsigned(3 downto 0) := "0011";  
-	constant subi_op : unsigned(3 downto 0) := "0100";
-	constant ld_op : unsigned(3 downto 0) := "0110";
-	constant mov_op : unsigned(3 downto 0) := "0101";
+	constant cmp_op 	: unsigned(3 downto 0) := "1000";
+	constant jump_op 	: unsigned(3 downto 0) := "1111";
+	constant jz_op 		: unsigned(3 downto 0) := "1001";
+	constant jn_op 		: unsigned(3 downto 0) := "1010";
+	constant jp_op 		: unsigned(3 downto 0) := "1100";
+	constant add_op 	: unsigned(3 downto 0) := "0001";  
+	constant addi_op 	: unsigned(3 downto 0) := "0010";  
+	constant sub_op 	: unsigned(3 downto 0) := "0011";  
+	constant subi_op 	: unsigned(3 downto 0) := "0100";
+	constant ld_op 		: unsigned(3 downto 0) := "0110";
+	constant mov_op 	: unsigned(3 downto 0) := "0101";
 	
 	begin
 	
 	stMachine : stateMachine port map(clk => clk, rst => rst, estado => estado);
 	
 	opcode <= instr_op;
+	
+	jz_en <= 	'1' when opcode = jz_op else
+				'0';
+	
+	jn_en <= 	'1' when opcode = jn_op else
+				'0';
+				
+	jp_en <= 	'1' when opcode = jp_op else
+				'0';
+	
+	flag_en <= 	'0' when estado /= "01" else
+				'1' when opcode = add_op else
+				'1' when opcode = addi_op else
+				'1' when opcode = sub_op else
+				'1' when opcode = subi_op else
+				'1' when opcode = cmp_op else
+				'0';
 	
 	acc_en <= 	'0' when estado /= "01" else
 				'1' when opcode = add_op else
@@ -77,6 +99,7 @@ architecture a_control of control is
 				"00" when opcode = addi_op else
 				"01" when opcode = sub_op else		--subtração
 				"01" when opcode = subi_op else
+				"01" when opcode = cmp_op else
 				"10" when opcode = mov_op and reg_d = '0' else	--passa a entrada
 				"10" when opcode = ld_op and reg_d = '0' else
 				"00";

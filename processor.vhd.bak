@@ -114,7 +114,7 @@ end component;
 	signal regWrite_en, instWrite_en, pcWrite_en: std_logic;
 	signal br_src, aluSrcA						: std_logic;
 	signal aluOp, state							: unsigned(1 downto 0);
-	signal jump_en, acc_en						: std_logic;
+	signal jump_en, load_en, acc_en				: std_logic;
 	signal jump_adr								: unsigned(6 downto 0);
 	signal jn_en, jp_en, jz_en, branch_en		: std_logic;
 	
@@ -238,7 +238,8 @@ begin
 	
 			
 	--ula e acumulador
-	acc_in <= result;
+	acc_in <= 	cte_out when load_en = '1' else
+				result;
 	in_a <= cte_out when aluSrcA = '1' else
 			rd_data_a;
 	in_b <= acc_out;
