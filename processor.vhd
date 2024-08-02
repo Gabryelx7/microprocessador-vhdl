@@ -48,18 +48,22 @@ component programCounter is
 end component;
 
 component control is
-	port(	rst 	: in std_logic;
-			clk 	: in std_logic;
-			instr_op: in unsigned(3 downto 0);
-			reg_d 	: in std_logic;
-			aluOp	: out unsigned(1 downto 0);
-			state	: out unsigned(1 downto 0);
-			aluSrcA : out std_logic;
-			jump_en : out std_logic;
-			br_src : out std_logic;
-			acc_en	: out std_logic;
-			pcWrite_en, regWrite_en, instWrite_en: out std_logic;
-			jz_en, jn_en, jp_en, flag_en : out std_logic
+	port(	rst 		: in std_logic;
+			clk 		: in std_logic;
+			instr_op	: in unsigned(3 downto 0);
+			reg_d 		: in std_logic;
+			aluOp		: out unsigned(1 downto 0);
+			state		: out unsigned(1 downto 0);
+			aluSrcA 	: out std_logic;
+			jump_en 	: out std_logic;
+			write_src 	: out std_logic;
+			acc_en		: out std_logic;
+			acc_src		: out std_logic;
+			pcWrite_en	: out std_logic;
+			regWrite_en : out std_logic;
+			instWrite_en: out std_logic;
+			memWrite_en : out std_logic;
+			jz_en, jn_en, jp_en, cjne_en, flag_en : out std_logic
 		);
 end component;
 
@@ -96,8 +100,28 @@ component reg1bit is
 		);
 end component;
 
+component reg16bits is
+	port(	clk		: in std_logic;
+			rst		: in std_logic;
+			wr_en	: in std_logic;
+			data_in : in unsigned(15 downto 0);
+			data_out: out unsigned(15 downto 0)
+		);
+end component;
+
+component ram is
+   port( 
+         clk      : in std_logic;
+         endereco : in unsigned(6 downto 0);
+         wr_en    : in std_logic;
+         dado_in  : in unsigned(15 downto 0);
+         dado_out : out unsigned(15 downto 0) 
+   );
+ end component;
+
 	--register file
-	signal write_data, rd_data_a, rd_data_b 	: unsigned(15 downto 0);
+	signal write_data, rd_data_a 	: unsigned(15 downto 0);
+	signal read_a : unsigned(2 downto 0);
 	
 	--ula
 	signal in_a, in_b, result		: unsigned(15 downto 0);
@@ -111,12 +135,12 @@ end component;
 	signal pc_in, pc_out 	: unsigned(6 downto 0);
 	
 	--control
-	signal regWrite_en, instWrite_en, pcWrite_en: std_logic;
-	signal br_src, aluSrcA						: std_logic;
-	signal aluOp, state							: unsigned(1 downto 0);
-	signal jump_en, acc_en						: std_logic;
-	signal jump_adr								: unsigned(6 downto 0);
-	signal jn_en, jp_en, jz_en, branch_en		: std_logic;
+	signal regWrite_en, instWrite_en, pcWrite_en	: std_logic;
+	signal aluSrcA, memWrite_en, write_src			: std_logic;
+	signal aluOp, state								: unsigned(1 downto 0);
+	signal jump_en, acc_en, jmp_en, acc_src			: std_logic;
+	signal jump_adr									: unsigned(6 downto 0);
+	signal jn_en, jp_en, jz_en, cjne_en, branch_en	: std_logic;
 	
 	--instruction register
 	signal instr_out : unsigned(15 downto 0);
@@ -134,11 +158,15 @@ end component;
 	signal ngt_en, ngt_out 	: std_logic;
 	signal flag_en			: std_logic;
 	
+	--RAM
+	signal a_out, mem_data_out, mem_data_in, ram_out : unsigned(15 downto 0);
+	signal ram_adr 	: unsigned(6 downto 0);
+	signal write_en : std_logic;
 	
 begin
 	
 	register_file : bancoRegs port map (rst => rst, clk => clk, wr_en => regWrite_en,
-										read_a => instr_out(11 downto 9),
+										read_a => read_a,
 										write_r => instr_out(11 downto 9),
 										write_data => write_data,
 										rd_data_a => rd_data_a
@@ -172,14 +200,17 @@ begin
 									state => state,
 									aluSrcA => aluSrcA,
 									jump_en => jump_en,
-									br_src => br_src,
-									acc_en => acc_en,							
+									write_src => write_src,
+									acc_en => acc_en,
+									acc_src => acc_src,
 									pcWrite_en => pcWrite_en,
 									regWrite_en => regWrite_en,
 									instWrite_en => instWrite_en,
+									memWrite_en => memWrite_en,
 									jz_en => jz_en,
 									jn_en => jn_en,
 									jp_en => jp_en,
+									cjne_en => cjne_en,
 									flag_en => flag_en
 									);
 									
@@ -222,30 +253,46 @@ begin
 									ngt_out
 									);
 	
+	ramFile : ram port map(	clk,
+							ram_adr,
+							memWrite_en,
+							mem_data_in,
+							mem_data_out
+							);
+	
 	--pc
 	branch_en 	<= 	(jz_en and zero_out) or (jn_en and ngt_out) or (jp_en and not ngt_out and not zero_out);
+	jmp_en <= jump_en or (cjne_en and not zero);
 	jump_adr 	<= 	instr_out(6 downto 0);
-	pc_in 		<= 	(jump_adr) when jump_en = '1' else
+	pc_in 		<= 	(jump_adr) when jmp_en = '1' else
 					(pc_out + jump_adr) when branch_en = '1' else
 					(pc_out + 1);
 	
 	--ROM
 	endereco <= pc_out;
 	
+	--RAM
+	ram_adr <= rd_data_a(6 downto 0);
+	mem_data_in <= acc_out;
+	--write_en <= '1' when state = "01" else
+	--			'0';
 	
 	--constant sign extender
 	cte_in <= instr_out(7 downto 0);
 	
 			
 	--ula e acumulador
-	acc_in <= result;
+	acc_in <= 	result when acc_src = '0' else
+				mem_data_out;
 	in_a <= cte_out when aluSrcA = '1' else
 			rd_data_a;
 	in_b <= acc_out;
 	
 	--entrada de dados no banco
-	write_data <= 	cte_out when br_src = '1' else
+	write_data <= 	cte_out 	when 	write_src = '1' else
 					acc_out;
+	read_a <= 	instr_out(11 downto 9);
+					
 			
 	--saídas
 	IROut <= instr_out;

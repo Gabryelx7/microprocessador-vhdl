@@ -39,7 +39,7 @@ begin
 								
 	sim_time : process
 	begin
-		wait for period_time*1200;
+		wait for period_time*3000;
 		finished <= '1';
 		wait;
 	end process sim_time;

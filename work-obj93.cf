@@ -1,0 +1,43 @@
+v 4
+file . "ram.vhd" "68a028854fad88156bb42356086074c92010749a" "20240623003506.305":
+  entity ram at 1( 0) + 1 on 243;
+  architecture a_ram of ram at 13( 475) + 0 on 244;
+file . "ula.vhd" "6c78b5dcd39b77f5c45168287a2e84aa17fddca1" "20240623003506.284":
+  entity ula at 1( 0) + 0 on 241;
+  architecture a_ula of ula at 14( 288) + 0 on 242;
+file . "stateMachine.vhd" "f802952d586d421693fa2885c82b16098748f0a6" "20240623003506.263":
+  entity statemachine at 1( 0) + 0 on 239;
+  architecture a_statemachine of statemachine at 9( 196) + 1 on 240;
+file . "sign_ext.vhd" "530bef75d96f519f8a08300241174ed1f16d67a7" "20240623003506.260":
+  entity sign_ext at 1( 0) + 0 on 237;
+  architecture a_sign_ext of sign_ext at 11( 196) + 0 on 238;
+file . "reg1bit.vhd" "e5032aa2edd9cc583962b7003b9f660de1333e03" "20240623003506.257":
+  entity reg1bit at 1( 0) + 0 on 235;
+  architecture a_reg1bit of reg1bit at 14( 250) + 0 on 236;
+file . "reg16bits.vhd" "04fb8d702444dfeae71d3fd24647d47b997cde6d" "20240623003506.254":
+  entity reg16bits at 1( 0) + 0 on 233;
+  architecture a_reg16bits of reg16bits at 14( 276) + 0 on 234;
+file . "rom.vhd" "23fbe6d36add812c05e9ccc73d166fb6f031e75e" "20240623012247.183":
+  entity rom at 1( 0) + 0 on 249;
+  architecture a_rom of rom at 12( 238) + 0 on 250;
+file . "programCounter.vhd" "83170c31226fac016e52daeb2c56bf3c98bd1351" "20240623003506.247":
+  entity programcounter at 1( 0) + 0 on 229;
+  architecture a_programcounter of programcounter at 14( 280) + 0 on 230;
+file . "processor_tb.vhd" "41d5a13bbad894f526743e60a18c9b9709189ae8" "20240623003506.244":
+  entity processor_tb at 1( 0) + 0 on 227;
+  architecture a_processor_tb of processor_tb at 8( 113) + 0 on 228;
+file . "processor.vhd" "6f958c30880bc66aadf18e75b6893dd10a339d9b" "20240623003506.240":
+  entity processor at 1( 0) + 0 on 225;
+  architecture a_processor of processor at 16( 376) + 0 on 226;
+file . "instr_reg.vhd" "2cbd564877aaa58c6184dffc041ac8855211dac7" "20240623003506.234":
+  entity instr_reg at 1( 0) + 0 on 223;
+  architecture a_instr_teg of instr_reg at 14( 296) + 0 on 224;
+file . "bancoRegs.vhd" "57854d592324cdf834a91af441aa5a42e4f7c856" "20240623003506.231":
+  entity bancoregs at 1( 0) + 0 on 221;
+  architecture a_bancoregs of bancoregs at 14( 325) + 0 on 222;
+file . "acumulador.vhd" "003f989d2a439374882e8708d203b9325db25d77" "20240623003506.227":
+  entity acumulador at 1( 0) + 0 on 219;
+  architecture a_acumulador of acumulador at 14( 277) + 0 on 220;
+file . "control.vhd" "7496ab095bf401658eb4e6bb388c98e12d4ff3f3" "20240623003506.211":
+  entity control at 1( 0) + 0 on 217;
+  architecture a_control of control at 25( 656) + 0 on 218;
